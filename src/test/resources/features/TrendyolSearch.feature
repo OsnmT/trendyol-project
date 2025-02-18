@@ -9,8 +9,18 @@ Feature: trendyol search
     When user search item on the search box
     Then user sees the result
 
-    @new
   Scenario: search item on trendyol website
 
-    When user search "tablet" on the search box
-    Then user sees "tablet" on the result
+    When user search "orange" on the search box
+    Then user sees "orange" on the result
+
+  @new
+  Scenario Outline: Search items on the trendyol
+
+    When user search "<items>" on the search box
+    Then user sees "<expectedTitle>" on the result
+
+    Examples: search values
+      | items  | expectedTitle |
+      | tablet | tablet        |
+      | iphone | iphone        |
