@@ -1,5 +1,6 @@
 package com.trendyol.tests;
 
+import com.trendyol.utilities.ConfigurationReader;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -10,7 +11,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class ExcelWrite {
-    String path = "SampleData.xlsx";
+    String path = ConfigurationReader.getProperty("path");
 
     @Test
     public void excel_write() throws IOException {

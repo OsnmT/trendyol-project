@@ -1,5 +1,6 @@
 package com.trendyol.tests;
 
+import com.trendyol.utilities.ConfigurationReader;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.Test;
@@ -10,7 +11,7 @@ import java.io.IOException;
 public class ExcelRead {
     @Test
     public void read_from_excel_file() throws IOException {
-        String path = "SampleData.xlsx";
+        String path = ConfigurationReader.getProperty("path");
 
         // to read from excel we need to load it to FileInputStream
         FileInputStream fileInputStream = new FileInputStream(path);
